@@ -1,0 +1,44 @@
+{
+  "name": "@pikoreels/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for PikoReels — lets Claude, Codex and other MCP clients drive your workspace.",
+  "license": "MIT",
+  "author": "PikoReels",
+  "homepage": "https://app.pikoreels.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhexists/pikoreels-mcp.git"
+  },
+  "bugs": "https://github.com/shubhexists/pikoreels-mcp/issues",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "model-context-protocol",
+    "claude",
+    "pikoreels",
+    "social-media",
+    "scheduling",
+    "ugc"
+  ],
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "bin": { "piko-mcp": "./dist/index.js" },
+  "files": ["dist", "src", "README.md", "LICENSE"],
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "login": "node dist/index.js login",
+    "status": "node dist/index.js status",
+    "test": "node --no-warnings --test test/*.test.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}
